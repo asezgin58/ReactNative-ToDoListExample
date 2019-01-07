@@ -82,7 +82,7 @@ export default class App extends Component<Props> {
 
         let newList = list;
 
-        let rndNumber = Math.floor(Math.random() * 10);
+        let rndNumber = Math.floor(Math.random() * Number.MAX_VALUE);
         try {
             await AsyncStorage.setItem('task' + rndNumber, this.state.task);
             const value = await AsyncStorage.getItem('task' + rndNumber);
@@ -191,7 +191,6 @@ export default class App extends Component<Props> {
 
                         <Button onPress={() => this.deleteItem(item.taskId)} title={'Del'} color={'red'}></Button>
                         <Button onPress={() => this.editItem(item)} title={'Edit'}></Button>
-
 
                     </View>
 
